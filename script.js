@@ -19,9 +19,9 @@ app.controller('actualCtrl', function ($scope, $http) {
         });
 });
 app.controller('pronosticoCtrl', function ($scope, $http) {
-    var puta ="http://api.openweathermap.org/data/2.5/forecast?q=";
+    var url ="http://api.openweathermap.org/data/2.5/forecast?q=";
     var apikey ="&APPID=e4f672a31d7142ea39accd3e015126fd";
-    $http.get(puta+this.selectedName+apikey).then(function (response) {
+    $http.get(url+this.selectedName+apikey).then(function (response) {
         $scope.myDataPronostico = response.data.list;
 
     });
