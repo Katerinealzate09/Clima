@@ -1,0 +1,38 @@
+<div class="content-fluid centrar">
+    <div id="pagina" class="row" ng-controller="actualCtrl">
+        <div id="actuales" class="col- col-sm-4 col-md-6 tarjeta"
+             ng-repeat="x in myData | filter:selectedName">
+            <div id="actual" class="card text-center">
+                <div class="card-header"><h4><strong>{{x.name}}</strong></h4>
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col- col-md-4">
+                            <img src='http://openweathermap.org/img/w/{{x.weather[0].icon}}.png'
+                                 alt='Icon depicting current weather.'>
+                        </div>
+                        <div class="col- col-md-8">
+                            <div class="row">
+                                <div class="col- col-md-4">
+                                    <h3>{{x.main.temp}}°C</h3>
+                                </div>
+                                <div class="col- col-md-8">
+                                    <p class="card-text"> {{x.weather[0].main}} </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col- col-md-12">
+                        <p class="card-text"> {{x.weather[0].description}} ~ High: {{x.main.temp_max}}°C ~
+                            Low: {{x.main.temp_min}}°C </p>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    Presure: {{x.main.pressure}}hPa ~ Humidity: {{x.main.humidity}}%
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
